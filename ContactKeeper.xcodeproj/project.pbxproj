@@ -13,6 +13,7 @@
 		417DA64E2B183AAB007216D5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 417DA64D2B183AAB007216D5 /* Preview Assets.xcassets */; };
 		417DA6552B184B73007216D5 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417DA6542B184B73007216D5 /* ImagePicker.swift */; };
 		417DA6572B184B7B007216D5 /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417DA6562B184B7B007216D5 /* ImageSaver.swift */; };
+		417DA65A2B185B23007216D5 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 417DA6582B185B23007216D5 /* DataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		417DA64D2B183AAB007216D5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		417DA6542B184B73007216D5 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		417DA6562B184B7B007216D5 /* ImageSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaver.swift; sourceTree = "<group>"; };
+		417DA6592B185B23007216D5 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			children = (
 				417DA6462B183AA7007216D5 /* ContactKeeperApp.swift */,
 				417DA6482B183AA7007216D5 /* ContentView.swift */,
+				417DA6582B185B23007216D5 /* DataModel.xcdatamodeld */,
 				417DA6542B184B73007216D5 /* ImagePicker.swift */,
 				417DA6562B184B7B007216D5 /* ImageSaver.swift */,
 				417DA64A2B183AAB007216D5 /* Assets.xcassets */,
@@ -144,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				417DA6552B184B73007216D5 /* ImagePicker.swift in Sources */,
+				417DA65A2B185B23007216D5 /* DataModel.xcdatamodeld in Sources */,
 				417DA6492B183AA7007216D5 /* ContentView.swift in Sources */,
 				417DA6472B183AA7007216D5 /* ContactKeeperApp.swift in Sources */,
 				417DA6572B184B7B007216D5 /* ImageSaver.swift in Sources */,
@@ -352,6 +356,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		417DA6582B185B23007216D5 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				417DA6592B185B23007216D5 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 417DA6592B185B23007216D5 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 417DA63B2B183AA7007216D5 /* Project object */;
 }
