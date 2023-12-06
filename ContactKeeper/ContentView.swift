@@ -8,39 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var image: Image?
-    @State private var inputImage: UIImage?
-    @State private var contacts = [Int]()
-    @State private var showingImagePicker = false
+    @State private var contacts = [Contact]()
     @State private var showingAddContactView = false
     
     var body: some View {
         NavigationView {
-            List(contacts, id: \.self) { contact in
+            List(contacts) { contact in
                 
             }
             .navigationTitle("Contact Keeper")
             .toolbar{
                 Button {
-                    showingImagePicker = true
+                    showingAddContactView = true
                 } label: {
                     Image(systemName: "plus")
                 }
             }
-            .onChange(of: inputImage) { loadImage() }
-            .sheet(isPresented: $showingImagePicker) {
-                ImagePicker(image: $inputImage)
-            }
             .sheet(isPresented: $showingAddContactView, content: {
-                AddContactView(image: image)
+                AddContactView()
             })
         }
-    }
-    
-    func loadImage() {
-        guard let inputImage = inputImage else { return }
-        image = Image(uiImage: inputImage)
-        showingAddContactView = true
     }
 }
 
