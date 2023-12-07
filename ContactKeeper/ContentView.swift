@@ -13,8 +13,18 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            List(contacts) { contact in
-                
+            List(contacts.sorted()) { contact in
+                NavigationLink {
+                    ContactDetailsView(contact: contact)
+                } label: {
+                    HStack {
+                        Image(data: contact.image)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width:50, height: 50)
+                        Text(contact.name)
+                    }
+                }
             }
             .navigationTitle("Contact Keeper")
             .toolbar{
@@ -25,8 +35,19 @@ struct ContentView: View {
                 }
             }
             .sheet(isPresented: $showingAddContactView, content: {
-                AddContactView()
+                AddContactView(contacts: $contacts)
             })
+            .onAppear(perform: loadContacts)
+        }
+    }
+    
+    func loadContacts() {
+        do {
+            let savePath = FileManager.documentsDirectory.appendingPathComponent("SavedContacts")
+            let contactData = try Data(contentsOf: savePath)
+            contacts = try JSONDecoder().decode([Contact].self, from: contactData)
+        } catch {
+            contacts = []
         }
     }
 }

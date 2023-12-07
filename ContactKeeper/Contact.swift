@@ -8,9 +8,9 @@
 import Foundation
 import SwiftUI
 
-struct Contact: Comparable, Identifiable {
-    let id = UUID()
-    var image: Image?
+struct Contact: Comparable, Identifiable, Codable {
+    let id: UUID
+    var image: Data
     var name: String
     
     static func <(lhs: Contact, rhs: Contact) -> Bool {
